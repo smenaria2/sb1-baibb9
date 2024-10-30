@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8),
+                 0 0 20px rgba(255, 255, 0, 0.8),
+                 0 0 30px rgba(255, 255, 0, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8),
+                 0 0 30px rgba(255, 255, 0, 0.8),
+                 0 0 40px rgba(255, 255, 0, 0.8);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@font-face {
+  font-family: 'Hindi';
+  src: url('https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Hindi', sans-serif;
+}
